@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Club Information</title>
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+#club-info {background-color: #f2e9e4; padding: 20px; border-radius: 15px; margin-top: 20px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); text-align: left; color: #22223b; line-height: 1.6;}
+#club-info h2 {color: #4a4e69; margin-bottom: 10px;}
+.container {max-width: 700px; background-color: #9a8c98; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); text-align: center;}
+.nav-links a {margin: 0 10px; font-weight: 600; color: #22223b; text-decoration: none;}
+.nav-links a:hover {text-decoration: underline;}
+.select-wrapper {display: flex; flex-direction: column; align-items: center; margin: 0 auto 20px auto;}
+.select-wrapper label {text-align: center; margin-bottom: 10px; color: #22223b; font-weight: 600;}
+.select-wrapper select {max-width: 300px; text-align: center; text-align-last: center; -moz-text-align-last: center; background-color: #f2e9e4; color: #22223b; border: 1px solid #4a4e69;}
+body {background-image: url('bg.jpg'); background-size: cover; background-repeat: no-repeat; min-height: 100vh; display: flex; justify-content: center; align-items: center;font-family: 'Poppins', sans-serif; background-color: #9a8c98; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;}
+button {background: linear-gradient(90deg, #22223b, #4a4e69, #22223b); font-weight: 600; cursor: pointer; transition: all 0.3s ease; border: none; color: #f2e9e4;}
+button:hover {transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15);}
+h1 {color: #22223b; margin-bottom: 10px; font-weight: 600;}
+h2 {color: #4a4e69; text-align: center; margin-bottom: 15px; font-weight: 600;}
+label {font-weight: 600;}
+select, button {width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid #4a4e69; font-size: 16px;}
+</style>
+</head>
+
+<body>
+<div class="container">
+ <h1>Blackwood Institute</h1> <h2>School Club Information</h2>
+
+     <div class="nav-links mt-3 mb-3">
+        <a href="index.html">Home</a>
+        <a href="grades.html">GWA Calculator</a>
+        <a href="clubs.html">School Clubs</a>
+    </div>
+
+ <div class="select-wrapper">
+  <label for="club-select">Select a club:</label>
+  <select id="club-select">
+   <option value="">-- Select a club --</option>
+   <option value="art">Art Club</option>
+   <option value="badminton">Badminton Club</option>
+   <option value="bball">Basketball Club</option>
+   <option value="chess">Chess Club</option>
+   <option value="dance">Dance Club</option>
+   <option value="glee">Glee Club</option>
+   <option value="robot">Robotics Club</option>
+   <option value="vball">Volleyball Club</option>
+  </select>
+ </div>
+
+<button id="show-info" class="btn btn-info text-white" py-click="show_club_info">Show Club Information</button>
+<pre id="club-info"></pre>
+  
+<script type="py" src="main.py"></script>
+</div>
+</body>
+</html>

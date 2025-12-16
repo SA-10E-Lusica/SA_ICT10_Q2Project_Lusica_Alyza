@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackwood Institute | GWA Calculator</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+<py-config>
+ [[fetch]]
+ files = ["main.py"]
+</py-config>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+#output {font-size: 1.2rem; font-weight: 600; text-align: center;}
+#student_info, #summary, #output {margin-top: 15px; padding: 15px; background-color: #f2e9e4; border-radius: 10px; color: #22223b; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+.container {max-width: 700px; background-color: #9a8c98; padding: 35px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); text-align: center}
+.form-control { margin-bottom: 15px; border-radius: 10px; border: 1px solid #4a4e69; text-align: center; background-color: #f2e9e4; color: #22223b;}
+.form-control:focus {border-color: #22223b; box-shadow: 0 0 0 0.2rem rgba(34,34,59,0.25);}
+.grades-container {display: grid; grid-template-columns: 1fr 1fr; gap: 15px;}
+.grade-input-group {text-align: center;}
+.nav-links a {margin: 0 10px; font-weight: 600; color: #22223b; text-decoration: none;}
+.nav-links a:hover {text-decoration: underline;}
+.section-box {background-color: #f2e9e4; padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); color: #22223b;}
+body {background-image: url('bg.jpg'); background-size: cover; background-repeat: no-repeat; min-height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif; background-color: #9a8c98; padding: 20px;}
+button {width: 100%; padding: 12px; border-radius: 10px; border: none; background: linear-gradient(90deg, #22223b, #4a4e69, #22223b); color: #f2e9e4; font-weight: 600; transition: all 0.3s ease;}
+button:hover {transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15);}
+h1 {color: #22223b; margin-bottom: 10px; font-weight: 600;}
+h2 {color: #4a4e69; text-align: center; margin-bottom: 15px; font-weight: 600;}
+label {font-weight: 600; color: #22223b;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Blackwood Institute</h1>
+    <h2>GWA Calculator</h2>
+
+    <div class="nav-links mt-3 mb-3">
+        <a href="index.html">Home</a>
+        <a href="grades.html">GWA Calculator</a>
+        <a href="clubs.html">School Clubs</a>
+    </div>
+
+    <div class="section-box">
+        <label for="first_name" class="text-center w-100">First Name</label>
+        <input type="text" class="form-control" id="first_name">
+
+        <label for="last_name" class="text-center w-100">Surname</label>
+        <input type="text" class="form-control" id="last_name">
+    </div>
+
+    <div class="section-box">
+        <h2>Enter Your Grades</h2>
+
+        <div class="grades-container">
+            <div class="grade-input-group">
+                <label for="english">English</label>
+                <input type="number" class="form-control" id="english">
+            </div>
+
+            <div class="grade-input-group">
+                <label for="filipino">Filipino</label>
+                <input type="number" class="form-control" id="filipino">
+            </div>
+
+            <div class="grade-input-group">
+                <label for="math">Mathematics</label>
+                <input type="number" class="form-control" id="math">
+            </div>
+
+            <div class="grade-input-group">
+                <label for="geometry">Geometry</label>
+                <input type="number" class="form-control" id="geometry">
+            </div>
+
+            <div class="grade-input-group">
+                <label for="science">Science</label>
+                <input type="number" class="form-control" id="science">
+            </div>
+
+            <div class="grade-input-group">
+                <label for="ss">Social Studies</label>
+                <input type="number" class="form-control" id="ss">
+            </div>
+        </div>
+    </div>
+
+    <button py-click="general_weighted_average">Calculate GWA</button>
+
+    <div id="student_info"></div>
+    <pre id="summary"></pre>
+    <div id="output"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="py" src="main.py"></script>
+
+</body>
+</html>
